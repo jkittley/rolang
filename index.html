@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rolang</title>
+<style>
+    body {
+        background-color: #eee;
+        margin: 0;
+        padding: 20px;
+    }
+    #ratout {
+        padding: 20px;
+        font-family: 'Courier New', Courier, monospace;
+        background-color: white;
+    }
+</style>
+</head>
+
+<body>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="rolang.js"></script>
+ 
+    <div id="ratout">
+
+    </div>
+    <svg id="imageToPrint" width="100%" height="100%" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+       <path d="M0,100.00L0,200" style="fill:none;stroke:black;stroke-width:3.13px;"/>     
+    </svg>
+
+    <script>
+
+    drawEnd = 500;
+    boomStep = 0.9;
+    carStep = 1.5;
+
+    rolang.svgToRat("imageToPrint", drawEnd, boomStep, carStep, function(rat) {
+        console.log(rat);
+        $('#ratout').append(rat);   
+    }) 
+
+        
+    </script>
+</body>
+</html>
